@@ -1,0 +1,15 @@
+version: '3'
+services:
+  db:
+    image: "mysql:5.7"
+    command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+    ports:
+     - "3306:3306"
+    volumes:
+     - /Users/dennis-lee/Docker/volumes/mysql:/var/lib/mysql
+    environment:
+     - MYSQL_ROOT_PASSWORD=root
+  redis:
+    image: "redis:latest"
+    ports:
+     - "6379:6379"
